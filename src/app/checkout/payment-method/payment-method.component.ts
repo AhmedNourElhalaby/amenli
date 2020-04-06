@@ -26,10 +26,10 @@ export class PaymentMethodComponent implements OnInit {
 
       (<HTMLInputElement>document.getElementById('email')).placeholder = text;
     });
-    this.translate.get('checkout.number').subscribe(text => {
+    // this.translate.get('checkout.number').subscribe(text => {
 
-      (<HTMLInputElement>document.getElementById('number')).placeholder = text;
-    });
+    //   (<HTMLInputElement>document.getElementById('number')).placeholder = text;
+    // });
     this.translate.get('checkout.exp').subscribe(text => {
 
       (<HTMLInputElement>document.getElementById('exp')).placeholder = text;
@@ -38,9 +38,13 @@ export class PaymentMethodComponent implements OnInit {
 
       (<HTMLInputElement>document.getElementById('security_code')).placeholder = text;
     });
+    this.translate.get('checkout.phone_number').subscribe(text => {
+
+      (<HTMLInputElement>document.getElementById('phone_number')).placeholder = text;
+    });
   
   }
-
+  get lang() {return localStorage.getItem('lang');}
   onClicked(val) {
     console.log(val.target.value);
   }

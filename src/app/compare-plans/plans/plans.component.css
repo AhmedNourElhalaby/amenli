@@ -48,9 +48,9 @@
 
 .plans .features {
     list-style: none;
-    margin: 40px 0px 40px 44px;
+    /* margin: 40px 0px 40px 44px; */
     color: #606060;
-    padding-left: 36px;
+    padding-left: 0px;
     width: 100%;
     font-family: Circle-Light;
 }
@@ -93,4 +93,5 @@
 
 .deactive-btn {
     background: #606060;
+    color: #80277B !important;
 }

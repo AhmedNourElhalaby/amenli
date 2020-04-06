@@ -15,6 +15,7 @@ import {GMapModule} from 'primeng/gmap';
 import {CarouselModule} from 'primeng/carousel';
 import {ToastModule} from 'primeng/toast';
 import {CalendarModule} from 'primeng/calendar';
+import {GalleriaModule} from 'primeng/galleria';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import {CalendarModule} from 'primeng/calendar';
         GMapModule,
         CarouselModule,
         ToastModule,
-        CalendarModule
+        CalendarModule,
+        GalleriaModule
 
     ],
     exports: [
@@ -50,7 +52,8 @@ import {CalendarModule} from 'primeng/calendar';
         GMapModule,
         CarouselModule,
         ToastModule,
-        CalendarModule
+        CalendarModule,
+        GalleriaModule
 
     ]
 })

@@ -6,12 +6,12 @@
                 <div class="p-grid">
                     <div class="p-col">
                         <p-radioButton name="method-payment" value="visa" (onClick)="onClicked($event)">{{ 'checkout.credit_card' | translate }}</p-radioButton>
-                        <span class="title-method">
+                        <span class="title-method" style="font-family: Circle-Light !important;">
                             {{ 'checkout.credit_card' | translate }}
                         </span>
                     </div>
                     <div class="p-col">
-                        <ul class="icons-payment">
+                        <ul class="icons-payment" [ngClass]="{'go-left': lang=='ar'}">
                             <li class="icon-payment"><img src="assets/images/icons/visa.png" alt="visa"></li>
                             <li class="icon-payment"><img src="assets/images/icons/master-card.jpg" alt="master-card"></li>
                             <li class="icon-payment"><img src="assets/images/icons/mastero.jpg" alt="mastero"></li>
@@ -39,7 +39,7 @@
                             <input type="email" pInputText formControlName="email" id="email" class="form-field" />
                         </div>
                         <div class="p-col-6  res-mobile">
-                            <input type="number" pInputText formControlName="number" id="number" class="form-field" />
+                            <input type="tel" pInputText formControlName="phone_number" id="phone_number" class="form-field" />
                         </div>
                         <div class="p-col-6  res-mobile">
                             <input type="text" pInputText formControlName="expDate" id="exp" class="form-field" />

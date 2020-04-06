@@ -25,12 +25,18 @@ export class CheckoutService {
                  validators: [Validators.required, Validators.email]
              }
          ),
-         number: new FormControl(null, 
+         phone_number: new FormControl(null, 
             { 
                  updateOn: 'blur',
                  validators: [Validators.required]
              }
          ),
+        //  number: new FormControl(null, 
+        //     { 
+        //          updateOn: 'blur',
+        //          validators: [Validators.required]
+        //      }
+        //  ),
          expDate: new FormControl(null, 
             { 
                  updateOn: 'blur',

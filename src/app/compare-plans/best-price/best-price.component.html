@@ -4,7 +4,7 @@
         <h5>
             {{ 'card_price.title1' | translate}}
         </h5>
-    <h6> {{ 'card_price.title2' | translate}} {{company_name}} </h6>
+        <h6> {{ 'card_price.title2' | translate}} {{company_name}} </h6>
 
         <h2 class="price-num">{{price | number:'1.0-0' }}</h2>
         <h3 class="currency">{{ 'compare.currency_and_date' | translate }}</h3>
@@ -13,12 +13,12 @@
             <!-- [disabled]="!f.valid || !validPrice()" -->
             <!-- [disabled]="!f.valid || !validPrice()" -->
             <input type="hidden" name="price" #priceInput="ngModel" [ngModel]="price" requried>
-            <button pButton type="submit"  class="ui-button-success color" [disabled]="!f.valid || !validPrice()">{{ 'card_price.buy_now' | translate }}</button>
+            <button pButton type="submit" class="buy-now" [disabled]="!f.valid || !validPrice()">{{ 'card_price.buy_now' | translate }}</button>
         </form>
     </p-card>
-    <p class="or">{{ 'card_price.or' | translate }}</p>
+    <p class="or" style="font-family: Circle-Light;">{{ 'card_price.or' | translate }}</p>
     <button pButton type="button" class="compare-btn" (click)="onClick()" [disabled]="!f.valid || !validPrice()">{{ 'card_price.go_compare' | translate }}</button>
     <!-- <app-compare-modal></app-compare-modal> -->
-    <p class="other-compare">{{length}} {{ 'card_price.other' | translate }}</p>
+    <p style="font-family: Circle-Light;" class="other-compare">{{length}} {{ 'card_price.other' | translate }}</p>
 
 </section>

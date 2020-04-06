@@ -9,7 +9,7 @@ p-card h4,
 p-card h5,
 p-card h6 {
     margin: 0px;
-    font-family: OpenSans-Regular !important;
+    font-family: Circle-Light !important;
 }
 
 p-card h6,
@@ -43,36 +43,28 @@ p-card h3 {
     text-transform: uppercase;
     font-weight: 500;
     cursor: pointer;
-    font-family: OpenSans-Bold;
+    font-family: Circle-Light;
     transition: .5s;
 }
 
-.ui-button-success:not([disabled]):hover {
+.best-price .buy-now {
     margin-top: 5px;
-    background: #fff !important;
-    color: var(--nine-color);
+    background: var(--nine-color) !important;
+    color: #fff !important;
     border: none;
     width: 108px;
     height: 27px;
+    line-height: 27px;
     border-radius: 17px;
     text-transform: uppercase;
     font-weight: 500;
-    font-family: OpenSans-Bold;
+    font-family: Circle-Light;
     cursor: pointer;
 }
 
-.best-price button:disabled {
-    margin-top: 5px;
+.best-price .buy-now:disabled {
     background: #fff !important;
-    color: var(--nine-color);
-    border: none;
-    width: 108px;
-    height: 27px;
-    font-family: OpenSans-Bold;
-    border-radius: 17px;
-    text-transform: uppercase;
-    font-weight: 500;
-    cursor: pointer;
+    color: var(--nine-color) !important;
 }
 
 p-card h6 {
@@ -108,8 +100,9 @@ h2.price-num {
     background: var(--gradiant-one) !important;
     width: 184px !important;
     margin-bottom: 2px;
-    font-family: OpenSans-Bold;
+    font-family: Circle-Light;
     transition: .5s;
+    line-height: 27px !important;
 }
 
 .compare-btn:disabled {

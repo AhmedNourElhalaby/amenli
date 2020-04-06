@@ -1,5 +1,5 @@
 .payment .title-method {
-    margin-left: 35px;
+    margin: auto 35px;
 }
 
 .payment .payment-title {
@@ -49,12 +49,18 @@ ul.icons-payment>li>img {
     position: relative;
 }
 
+.go-left {
+    text-align: left;
+}
+
 footer {
     position: absolute;
     margin-left: 13px;
     width: 100%;
     padding-top: 12px;
     bottom: 0px;
+    padding-right: 15px;
+    padding-left: 15px;
     left: -13px;
     background: #fff;
     height: 68px;

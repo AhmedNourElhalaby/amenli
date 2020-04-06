@@ -99,6 +99,9 @@ span.currency {
     width: 100%;
     margin-top: 10px;
     font-family: OpenSans-Bold;
+    background: #eee !important;
+    color: #E42E5E;
+    height: 70px;
 }
 
 .request-policy:disabled {
@@ -111,7 +114,7 @@ span.currency {
 }
 
 .check-terms-conditions span.title {
-    margin: 80px 0px 0px 41px;
+    margin: 80px 30px 0px 41px;
     padding-top: 20px;
     color: #888
 }

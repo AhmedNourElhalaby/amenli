@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { QuotesService } from '../shared/quotes.service';
 import { Subscription } from 'rxjs';
 import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-car-insurance',
   templateUrl: './car-insurance.component.html',
@@ -12,13 +13,14 @@ export class CarInsuranceComponent implements OnInit, OnDestroy {
   brands;
   years;
   loadBrandsSub: Subscription;
-
   form: FormGroup;
   data = {
     brand: 0,
     price: 0,
     year: 0
   };
+
+  valueYear: number;
   constructor(private quotesService: QuotesService, private translate: TranslateService) { }
 
   ngOnInit() {
@@ -39,6 +41,11 @@ export class CarInsuranceComponent implements OnInit, OnDestroy {
     this.translate.get('quotes.car_placeholder').subscribe((text: string) => {
       (document.getElementById('price') as HTMLInputElement).placeholder = text;
     });
+
+    
+    //get input value
+    this.valueYear = this.years[0].value;
+    //console.log('year val', this.years[0].value);
   }
 
   createCarForm() {
@@ -66,7 +73,7 @@ export class CarInsuranceComponent implements OnInit, OnDestroy {
 
   // submit form auto
   submitFormAuto(value: any, type: 'brand' | 'price' | 'year') {
-
+    this.data.year = this.valueYear;
     if (type === 'brand') {
       this.data.brand = value;
     }
@@ -75,9 +82,11 @@ export class CarInsuranceComponent implements OnInit, OnDestroy {
       this.data.price = parseInt(value);
     }
 
+    //this.data.year = value;
     if (type === 'year') {
       this.data.year = value;
     }
+  
 
     if ((this.data.price != null) && (this.data.price) !== 0 && (this.data.brand != null) && (this.data.brand !== 0 ) && (this.data.year != null) && (this.data.year !== 0 ) ) {
       console.log(this.data);

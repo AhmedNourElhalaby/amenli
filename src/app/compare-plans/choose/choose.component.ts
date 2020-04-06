@@ -96,11 +96,13 @@ export class ChooseComponent implements OnInit, OnDestroy {
 
   onClick(company_name, plan, brandId, price) {
     if (localStorage.getItem('medical') === 'medical') {
-      this.router.navigate(['/', 'plan', 'choose', company_name, plan, parseInt(localStorage.getItem('dob'))]);
+      
+      this.router.navigate(['/', 'plan', 'choose', company_name, plan, parseInt(localStorage.getItem('dob'))]).then(res=>  scrollTo(0,0));
+      
     } else {
       console.log(company_name, plan, brandId, price);
 
-      this.router.navigate(['/', 'plan', 'choose', company_name, plan, brandId, price]);
+      this.router.navigate(['/', 'plan', 'choose', company_name, plan, brandId, price]).then(res=>  scrollTo(0,0));
     }
   }
 

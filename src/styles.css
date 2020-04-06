@@ -112,7 +112,7 @@ a#ui-tabpanel-0-label {
 
 li.ui-state-default.ui-corner-top.ui-tabview-selected.ui-state-active.ng-star-inserted a {
     color: var(--black-color) !important;
-    font-family: OpenSans-Regular;
+    font-family: Circle-Light !important;
     font-weight: bold;
 }
 
@@ -141,7 +141,7 @@ a#ui-tabpanel-0-label,
 a#ui-tabpanel-1-label,
 a#ui-tabpanel-2-label {
     line-height: 37px;
-    font-family: OpenSans-Semibold;
+    font-family: Circle-Light;
     font-weight: bold;
 }
 
@@ -250,6 +250,7 @@ label.label-input {
 
 [dir="rtl"] label.label-input {
     text-align: right !important;
+    font-family: Circle-Light;
     margin: 5px;
 }
 

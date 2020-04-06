@@ -71,6 +71,7 @@
         "credit_card": "Credit Card",
         "cash": "Cash",
         "card_number": "Card Number",
+        "phone_number": "Phone Number",
         "name_card": "Name On Card",
         "email": "Email",
         "number": "Number",

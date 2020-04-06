@@ -19,6 +19,7 @@ export class OrderSummaryComponent implements OnInit {
   price: string;
   planData: Subscription;
   chk_val: boolean;
+  imagePath:string;
   constructor(private checkoutService: CheckoutService, private uiService: UIService, private params: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -34,6 +35,7 @@ export class OrderSummaryComponent implements OnInit {
       this.companyName = paramMap.get('company_name');
       this.brandId = paramMap.get('brandId');
       this.price = paramMap.get('price');
+      this.imagePath = paramMap.get('imagePath');
 
       this.planData = this.checkoutService.loadPlan.subscribe(res => {
         const key = 'benefit';

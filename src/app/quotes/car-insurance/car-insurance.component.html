@@ -5,10 +5,10 @@
     </div>
     <div class="form-control">
         <label class="label-input">{{ 'quotes.price' | translate }}</label>
-        <input type="number" step="10" id="price" pInputText class="input-field" name="price" formControlName="price" (input)="submitFormAuto($event.target.value, 'price')">
+        <input type="number" step="10000" id="price" pInputText class="input-field" name="price" formControlName="price" (input)="submitFormAuto($event.target.value, 'price')">
     </div>
     <div class="form-control">
         <label class="label-input">{{ 'quotes.year' | translate }}</label>
-        <p-dropdown [options]="years" class="input-field" name="year" formControlName="year" (onChange)="submitFormAuto($event.value, 'year')"></p-dropdown>
+        <p-dropdown [options]="years" class="input-field" id="inputVal" name="year" #dd formControlName="year" (onChange)="submitFormAuto($event.value, 'year')"></p-dropdown>
     </div>
 </form>

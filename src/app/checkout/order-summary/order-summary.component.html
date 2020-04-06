@@ -1,9 +1,17 @@
 <div class="order">
     <section class="order-summary">
+        <div class="p-grid">
+            <div class="p-col-6 mobile-res">
+                <h2 class="title-summary">
+                    {{'checkout.order_summary' | translate}}
+                </h2>
+            </div>
+            <div class="p-col-6 mobile-res" style="text-align: left;">
+                <img [src]="imagePath" alt="{{companyName}}" width="100">
+            </div>
+        </div>
 
-        <h2 class="title-summary">
-            {{'checkout.order_summary' | translate}}
-        </h2>
+
         <div class="gold-tier">
             <div class="p-grid">
                 <div class="p-col-6">

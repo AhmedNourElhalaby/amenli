@@ -23,6 +23,7 @@ export class PlansComponent implements OnInit, OnDestroy {
   month: string;
   year: string;
   medical: string;
+  imagePath: string;
   constructor(private translate: TranslateService , private router: Router, private params: ActivatedRoute, private compareModelService: CompareModelService) { }
 
   ngOnInit() {
@@ -44,7 +45,8 @@ export class PlansComponent implements OnInit, OnDestroy {
         const key = 'price';
         console.log('plans', Object.values(res)[0][key]);
         this.plans = res;
-        console.log(res);
+        this.imagePath = res.image;
+      //  console.log(res.image);
       });
 
       console.log('Here', this.plans);
@@ -117,9 +119,9 @@ export class PlansComponent implements OnInit, OnDestroy {
 
   onClick(company_name, plan_selected, brandId, price) {
     if (localStorage.getItem('medical') === 'medical') {
-      this.router.navigate(['/', 'checkout', 'payment', company_name, plan_selected, parseInt(localStorage.getItem('dob'))]);
+      this.router.navigate(['/', 'checkout', 'payment', company_name, plan_selected, parseInt(localStorage.getItem('dob')), this.imagePath]);
     } else {
-      this.router.navigate(['/', 'checkout', 'payment', company_name, plan_selected, brandId, price]);
+      this.router.navigate(['/', 'checkout', 'payment', company_name, plan_selected, brandId, price, this.imagePath]);
     }
   }
 

@@ -16,6 +16,9 @@ export class QuotesComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  get lang() {return localStorage.getItem('lang');}
+
   handleChange(e) {
     const index = e.index;
     this.enabled = false;
