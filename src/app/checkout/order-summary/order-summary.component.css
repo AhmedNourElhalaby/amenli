@@ -98,14 +98,14 @@ span.currency {
     background: #E42E5E;
     width: 100%;
     margin-top: 10px;
-    font-family: OpenSans-Bold;
+    font-family: Circle-Light;
     background: #eee !important;
     color: #E42E5E;
     height: 70px;
 }
 
 .request-policy:disabled {
-    background: #eee !important;
+    background: #c6c4c4 !important;
     color: #E42E5E;
 }
 

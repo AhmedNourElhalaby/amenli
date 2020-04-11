@@ -48,7 +48,45 @@ export class CheckoutService {
                  updateOn: 'blur',
                  validators: [Validators.required, Validators.minLength(3)]
              }
+         ),
+         re_address: new FormControl(null, 
+            { 
+                 updateOn: 'blur',
+                 validators: [Validators.required]
+             }
          )
+    });
+
+
+    cashForm = new FormGroup({
+
+        name: new FormControl(null, 
+            { 
+                 updateOn: 'blur',
+                 validators: [Validators.required]
+             }
+         ),
+         phone_number: new FormControl(null, 
+            { 
+                 updateOn: 'blur',
+                 validators: [Validators.required]
+             }
+         ),
+         address: new FormControl(null, 
+            { 
+                 updateOn: 'blur',
+                 validators: [Validators.required]
+             }
+         ),
+         re_address: new FormControl(null, 
+            { 
+                 updateOn: 'blur',
+                 validators: [Validators.required]
+             }
+         )
+        
+      
+       
     });
     loadPlan = new Subject<any>();
     constructor(private odooService: OdooService) {}

@@ -3,7 +3,7 @@ import { QuotesService } from '../shared/quotes.service';
 import { Subscription } from 'rxjs';
 import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-
+import {Message} from 'primeng//api';
 @Component({
   selector: 'app-car-insurance',
   templateUrl: './car-insurance.component.html',
@@ -19,6 +19,8 @@ export class CarInsuranceComponent implements OnInit, OnDestroy {
     price: 0,
     year: 0
   };
+pricePattern = "^([0-9]+([\.][0-9]+)?)|([\u0660-\u0669]+([\.][\u0660-\u0669]+)?)$";
+  
 
   valueYear: number;
   constructor(private quotesService: QuotesService, private translate: TranslateService) { }
@@ -48,6 +50,22 @@ export class CarInsuranceComponent implements OnInit, OnDestroy {
     //console.log('year val', this.years[0].value);
   }
 
+  convertArabNum(arabNumStr){
+    
+
+   
+      let x = '';
+      const dic = {'٠':0,'١':1,'٢':2,'٣':3,'٤':4,'٥':5,'٦':6,
+      '٧':7,'٨':8,'٩':9};
+      
+      for (var i =0; i < arabNumStr.length; i++){
+        x += dic[arabNumStr.charAt(i)];
+      }
+      return x;
+    
+    
+  }
+
   createCarForm() {
     this.form =  new FormGroup({
       brand: new FormControl(0, {
@@ -56,7 +74,7 @@ export class CarInsuranceComponent implements OnInit, OnDestroy {
       }),
       price: new FormControl(null, {
         updateOn: 'blur',
-        validators: [Validators.required]
+        validators: [Validators.required, Validators.pattern(this.pricePattern)]
       }),
       year: new FormControl(0, {
         updateOn: 'blur',
@@ -65,11 +83,17 @@ export class CarInsuranceComponent implements OnInit, OnDestroy {
     });
   }
 
+  get Price() {
+    return this.form.get('price');
+}
+
   // Form
   selectBrand(event) {
     console.log(event.value);
    // this.afterCheckForm();
   }
+
+  
 
   // submit form auto
   submitFormAuto(value: any, type: 'brand' | 'price' | 'year') {
@@ -79,14 +103,15 @@ export class CarInsuranceComponent implements OnInit, OnDestroy {
     }
 
     if (type === 'price') {
-      this.data.price = parseInt(value);
+      this.data.price =parseInt(value);
+     
     }
 
     //this.data.year = value;
     if (type === 'year') {
       this.data.year = value;
     }
-  
+    
 
     if ((this.data.price != null) && (this.data.price) !== 0 && (this.data.brand != null) && (this.data.brand !== 0 ) && (this.data.year != null) && (this.data.year !== 0 ) ) {
       console.log(this.data);

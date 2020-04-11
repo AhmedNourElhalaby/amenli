@@ -55,6 +55,9 @@ import {MessageService} from 'primeng/api';
 import { TranslateConfigService } from './shared/translate-config.service';
 import { InsuranceService } from './insurance-services/insurance.service';
 import { SliderComponent } from './home/slider/slider.component';
+import { TypeInsuranceComponent } from './home/type-insurance/type-insurance.component';
+import { ServiceGroupComponent } from './insurance-services/service-group/service-group.component';
+import { ComplaintsComponent } from './complaints/complaints.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,6 +93,9 @@ import { SliderComponent } from './home/slider/slider.component';
     AboutusComponent,
     InsuranceServicesComponent,
     SliderComponent,
+    TypeInsuranceComponent,
+    ServiceGroupComponent,
+    ComplaintsComponent,
     
   ],
   imports: [

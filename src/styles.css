@@ -49,8 +49,8 @@ body {
 
 body {
     margin: 0;
-    font-family: "OpenSans";
-    height: 1000px;
+    font-family: Circle-Light;
+    /* height: 1000px; */
 }
 
 body h1,
@@ -572,4 +572,22 @@ body .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item-group:not(.ui-state
     .container {
         width: 1200px;
     }
+}
+
+.ui-panel-titlebar {
+    height: 55px;
+    background-color: #fff !important;
+    /* border: none !important; */
+}
+
+.ui-panel-content {
+    background-color: #f1f1f1 !important;
+    border: none !important;
+}
+
+.ui-message-error {
+    width: 100%;
+    text-align: right;
+    font-size: 17px;
+    font-family: Circle-Light;
 }

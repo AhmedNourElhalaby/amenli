@@ -3,13 +3,14 @@
 </div>
 <p-sidebar [(visible)]="display" position="right" (onHide)="sidenavClosed()">
     <div class="links">
-        <div class=" nav-item " (click)="onClose()"><a href="# ">{{ 'nav_list.about_us' | translate }}</a></div>
-        <div class=" nav-item " (click)="onClose()"><a href="# ">{{ 'nav_list.insurance_type' | translate }}</a></div>
-        <div class=" nav-item " (click)="onClose()"><a href="# ">{{ 'nav_list.claims' | translate }}</a></div>
-        <div class="nav-item " (click)="onClose()"><a href="# ">{{ 'nav_list.blog' | translate }}</a></div>
-        <div class=" nav-item " (click)="onClose()"><a href="# ">{{ 'nav_list.contact_us' | translate }}</a></div>
-        <div class=" nav-item " (click)="onClose()" *ngIf="lang == 'en'"><a href="# ">عربى</a></div>
-        <div class=" nav-item " (click)="onClose()" *ngIf="lang == 'ar'"><a href="# ">English</a></div>
+        <div class=" nav-item " (click)="onClose()"><a routerLink="/aboutus" routerLinkActive="active-link">{{ 'nav_list.about_us' | translate }}</a></div>
+        <div class=" nav-item " (click)="onClose()">
+            <a [routerLink]="['/', 'insurance']" [queryParams]="{'type': 'individual'}" routerLinkActive=" active-link ">{{ 'nav_list.insurance_type' | translate }}</a></div>
+        <div class=" nav-item " (click)="onClose() "><a (click)="onNavigate() " id="claims ">{{ 'nav_list.claims' | translate }}</a></div>
+        <div class="nav-item " (click)="onClose() "><a href="# ">{{ 'nav_list.blog' | translate }}</a></div>
+        <div class=" nav-item " (click)="onClose() "><a href="#section1 ">{{ 'nav_list.contact_us' | translate }}</a></div>
+        <!-- <div class=" nav-item " (click)="onClose() " *ngIf="lang=='en' "><a href="# ">عربى</a></div>
+        <div class=" nav-item " (click)="onClose() " *ngIf="lang=='ar' "><a href="# ">English</a></div> -->
 
     </div>
 </p-sidebar>

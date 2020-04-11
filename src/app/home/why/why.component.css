@@ -1,4 +1,11 @@
 .why {
-    text-align: center;
     margin: 40px auto;
+}
+
+li {
+    padding-bottom: 10px;
+}
+
+li>span {
+    padding-right: 20px;
 }

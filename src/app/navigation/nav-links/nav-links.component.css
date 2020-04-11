@@ -7,9 +7,10 @@
     position: relative;
 }
 
-.insurance-link:hover .inner {
+
+/* .insurance-link:hover .inner {
     visibility: visible !important;
-}
+} */
 
 .insurance-link .inner {
     position: absolute;

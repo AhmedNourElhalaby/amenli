@@ -130,7 +130,7 @@ span.num-counter.span-active {
 .mdl-stepper-horizontal-alternative .mdl-stepper-step .mdl-stepper-title {
     margin-top: 10px;
     font-size: 14px;
-    font-family: OpenSans-Semibold;
+    font-family: Circle-Light;
     text-transform: uppercase;
 }
 
@@ -187,7 +187,7 @@ span.num-counter.span-active {
 
 .icon-arrow-left {
     position: absolute;
-    top: 28%;
+    top: 22%;
     left: -12px;
     font-size: 44px !important;
     color: var(--four-color);
@@ -206,7 +206,7 @@ span.num-counter.span-active {
 .effect-on-num-counter {
     line-height: 51px;
     padding-left: 2px;
-    font-family: OpenSans-Bold;
+    font-family: Circle-Light;
 }
 
 @media screen and (max-width: 700px) {

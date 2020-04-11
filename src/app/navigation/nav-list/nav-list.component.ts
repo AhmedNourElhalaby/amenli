@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavListComponent implements OnInit {
   display = false;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -24,6 +25,15 @@ export class NavListComponent implements OnInit {
 
   onClose() {
     this.display = false;
+  }
+  onNavigate() {
+    this.router.navigate(['/get_quote'])
+    .then(() => {
+      window.location.reload();
+      
+    });
+
+    
   }
 
 }

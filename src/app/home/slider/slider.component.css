@@ -1,6 +1,29 @@
-` .ui-panel-images {
+.ui-panel-images {
     width: auto;
     height: inherit;
     object-fit: contain;
     position: relative;
+}
+
+.slider {
+    position: relative;
+}
+
+.title-container {
+    position: absolute;
+    z-index: 10;
+    top: 60px;
+    right: 33px;
+}
+
+.btn-more {
+    background: #D95F1E;
+    border: none;
+    width: 140px;
+    height: 36px;
+    font-size: 18px;
+    color: #252525;
+    border-radius: 20px;
+    height: 100%;
+    font-family: Circle-Light !important;
 }

@@ -5,8 +5,7 @@
 .wrapping-title h2 {
     font-size: 35px;
     margin-bottom: 0px;
-     font-family: OpenSans-Bold;
-     
+    font-family: Circle-Light;
 }
 
 .wrapping-title h4 {
@@ -14,6 +13,6 @@
     font-size: 18px;
     font-weight: 100;
     margin-bottom: 60px;
-    font-family: OpenSans-Regular;
-       color: #606060 !important;
+    font-family: Circle-Light;
+    color: #606060 !important;
 }

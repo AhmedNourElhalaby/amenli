@@ -17,6 +17,9 @@ import {ToastModule} from 'primeng/toast';
 import {CalendarModule} from 'primeng/calendar';
 import {GalleriaModule} from 'primeng/galleria';
 
+import {PanelModule} from 'primeng/panel';
+import {MessageModule} from 'primeng/message';
+
 @NgModule({
     imports: [
         TabMenuModule,
@@ -34,7 +37,9 @@ import {GalleriaModule} from 'primeng/galleria';
         CarouselModule,
         ToastModule,
         CalendarModule,
-        GalleriaModule
+        GalleriaModule,
+        PanelModule,
+        MessageModule
 
     ],
     exports: [
@@ -53,7 +58,9 @@ import {GalleriaModule} from 'primeng/galleria';
         CarouselModule,
         ToastModule,
         CalendarModule,
-        GalleriaModule
+        GalleriaModule,
+        PanelModule,
+        MessageModule
 
     ]
 })

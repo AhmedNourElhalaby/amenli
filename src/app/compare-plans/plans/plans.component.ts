@@ -119,9 +119,15 @@ export class PlansComponent implements OnInit, OnDestroy {
 
   onClick(company_name, plan_selected, brandId, price) {
     if (localStorage.getItem('medical') === 'medical') {
-      this.router.navigate(['/', 'checkout', 'payment', company_name, plan_selected, parseInt(localStorage.getItem('dob')), this.imagePath]);
+      this.router.navigate(['/', 'checkout', 'payment', company_name, plan_selected, parseInt(localStorage.getItem('dob')), this.imagePath])
+      .then(()=> {
+        window.scrollTo(0,0);
+      });
     } else {
-      this.router.navigate(['/', 'checkout', 'payment', company_name, plan_selected, brandId, price, this.imagePath]);
+      this.router.navigate(['/', 'checkout', 'payment', company_name, plan_selected, brandId, price, this.imagePath])
+      .then(()=> {
+        window.scrollTo(0,0);
+      });
     }
   }
 

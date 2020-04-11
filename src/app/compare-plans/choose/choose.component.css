@@ -8,7 +8,7 @@
 .big-title {
     font-size: 40px;
     margin-bottom: 0;
-    font-family: OpenSans-Bold;
+    font-family: Circle-Light;
     text-align: center;
 }
 
@@ -16,7 +16,7 @@
     margin-top: 0px;
     margin-bottom: 40px;
     font-size: 20px;
-    font-family: OpenSans-Regular;
+    font-family: Circle-Light;
     text-align: center;
     color: #858585;
 }
@@ -154,7 +154,7 @@ ul.nav-list>li:not(:first-child):hover {
     color: var(--black-color) !important;
     text-transform: uppercase;
     margin-left: 15px;
-    font-family: OpenSans-Bold;
+    font-family: Circle-Light;
 }
 
 .title-plan .fa-star {
@@ -249,7 +249,7 @@ span.title-badge {
     text-align: center !important;
     font-size: 2.5rem;
     margin: 11px auto;
-    font-family: OpenSans-Semibold;
+    font-family: Circle-Light;
 }
 
 .price-num-str a {
@@ -270,7 +270,7 @@ span.title-badge {
 
 .type-month {
     font-size: 14px;
-    font-family: OpenSans-Semibold;
+    font-family: Circle-Light;
     margin: auto 5px;
 }
 
@@ -287,7 +287,7 @@ span.title-badge {
     font-weight: 500;
     cursor: pointer;
     transition: .5s;
-    font-family: OpenSans-Bold;
+    font-family: Circle-Light;
 }
 
 .alert-yello {

@@ -5,8 +5,10 @@
     </div>
     <div class="form-control">
         <label class="label-input">{{ 'quotes.price' | translate }}</label>
-        <input type="number" step="10000" id="price" pInputText class="input-field" name="price" formControlName="price" (input)="submitFormAuto($event.target.value, 'price')">
+        <input type="text" step="10000" id="price" pInputText class="input-field" name="price" formControlName="price" (input)="submitFormAuto($event.target.value, 'price')">
     </div>
+    <p-message severity="error" text="يجب ادخال ارقام فقط" *ngIf="Price.errors?.pattern"></p-message>
+
     <div class="form-control">
         <label class="label-input">{{ 'quotes.year' | translate }}</label>
         <p-dropdown [options]="years" class="input-field" id="inputVal" name="year" #dd formControlName="year" (onChange)="submitFormAuto($event.value, 'year')"></p-dropdown>

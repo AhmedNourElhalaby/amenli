@@ -9,20 +9,20 @@ import { Insurance } from './insurance.model';
   styleUrls: ['./insurance-services.component.css']
 })
 export class InsuranceServicesComponent implements OnInit {
-  page: string;
-  result: Insurance;
+  type: string;
+  result: 'individual' | 'group';
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private insuranceService: InsuranceService) { }
 
   ngOnInit() {
 
     this.activatedRoute.queryParamMap.subscribe(paramMap=> {
-      if(!paramMap.has('page')) {
+      if(!paramMap.has('type')) {
         return this.router.navigateByUrl('/');
       }
 
-      this.page = paramMap.get('page');
+      this.type = paramMap.get('type');
      
-      this.result = this.insuranceService.getServiceByTag(this.page);
+      // this.result = this.insuranceService.getServiceByTag(this.type);
       
     });
     

@@ -60,4 +60,8 @@ export class NavLinksComponent implements OnInit, AfterViewInit {
     
   }
 
+  scroll(el: HTMLLIElement) {
+    el.scrollIntoView();
+  }
+
 }

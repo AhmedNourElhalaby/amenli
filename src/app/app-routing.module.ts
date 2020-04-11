@@ -8,6 +8,7 @@ import { ChooseComponent } from './compare-plans/choose/choose.component';
 import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { InsuranceServicesComponent } from './insurance-services/insurance-services.component';
+import { ComplaintsComponent } from './complaints/complaints.component';
 
 
 
@@ -15,12 +16,14 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'aboutus', component: AboutusComponent},
   { path: 'insurance', component: InsuranceServicesComponent},
+  
   {path: 'get_quote', component: QuotesComponent},
   {path: 'plan/choose/:company_name/:plan_selected/:brandId/:price', component: ComparePlansComponent},
   {path: 'checkout/payment/:company_name/:plan_selected/:brandId/:price/:imagePath', component: CheckoutComponent},
   {path: 'companies/choose/:brandId/:price', component: ChooseComponent},
   {path: 'plan/choose/:company_name/:plan_selected/:dob', component: ComparePlansComponent},
   {path: 'companies/choose/:dob', component: ChooseComponent},
+  {path: 'complaints', component: ComplaintsComponent},
   {path: 'checkout/payment/:company_name/:plan_selected/:dob/:imagePath', component: CheckoutComponent},
 
 ];

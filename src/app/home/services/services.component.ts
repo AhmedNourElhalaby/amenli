@@ -15,7 +15,7 @@ export class ServicesComponent implements OnInit {
 
   onNavigate(url: string) {
     console.log('here');
-    this.router.navigate(['/','insurance'], {queryParams: {page: url}}).then(res => {
+    this.router.navigate(['/','insurance'], {queryParams: {page: 'individual'}}).then(res => {
       window.scrollTo(0,0);
     });
   }
