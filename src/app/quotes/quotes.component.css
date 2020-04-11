@@ -80,7 +80,8 @@ ul.ui-tabview-nav li:first-child span {
         font-family: FuturaBoldBT;
     }
     span.ng-star-inserted {
-        visibility: hidden;
+        visibility: visible;
+        font-size: 14px;
     }
     .icon-tabs {
         display: block;

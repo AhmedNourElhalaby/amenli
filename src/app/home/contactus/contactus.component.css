@@ -46,3 +46,12 @@ ul.social-links>li {
     border-color: var(--black-color);
     color: #fff;
 }
+
+@media (max-width: 700px) {
+    .contactus-grid {
+        margin-bottom: 40px;
+    }
+    .field-input {
+        width: 100%;
+    }
+}

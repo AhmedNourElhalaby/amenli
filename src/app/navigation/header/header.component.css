@@ -98,39 +98,35 @@ input.form-field::placeholder {
     .auth-links {
         display: none;
     }
-}
-
-@media screen and (max-width: 990px) {
-    .auth-links {
-        display: none;
-    }
     .header-section {
         margin-top: 12px !important;
     }
 }
 
-@media screen and (max-width: 700px) {
-    .form-control input {
-        width: 110px;
-        padding: 14px 9px 14px 45px;
-        margin-right: 5px;
-    }
-    .form-control input::placeholder {
-        visibility: hidden;
-    }
-    .icon-menu {
-        width: 48px !important;
-        height: 48px !important;
-        line-height: 52px !important;
-        margin: 0 auto !important;
-        text-align: center !important;
-    }
-    span.pi.pi-search {
-        line-height: 0;
+@media screen and (min-width: 700px) {
+    .other-class {
+        text-align: left !important;
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 700px) {
+    .down {
+        display: inline-block;
+        text-align: center;
+    }
+    input.form-field {
+        width: 100%;
+    }
+    .other-class {
+        text-align: center;
+    }
+    .form-control {
+        margin-bottom: 0px !important;
+    }
+}
+
+
+/* @media screen and (max-width: 400px) {
     .search-box {
         margin-left: -16px !important;
         text-align: left;
@@ -148,4 +144,4 @@ input.form-field::placeholder {
         padding: 11px 9px 11px 45px;
         margin-right: 5px;
     }
-}
+} */

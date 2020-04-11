@@ -566,6 +566,9 @@ body .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item-group:not(.ui-state
         margin: 0 auto;
         margin-bottom: 20px;
     }
+    [dir="rtl"] .ui-tabview .ui-tabview-panels {
+        margin: auto 3px !important;
+    }
 }
 
 @media (min-width: 1200px) {
