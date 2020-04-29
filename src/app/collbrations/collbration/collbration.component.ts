@@ -4,13 +4,12 @@ import { CollbrationsService } from '../collbrations.service';
 @Component({
   selector: 'app-collbration',
   templateUrl: './collbration.component.html',
-  styleUrls: ['./collbration.component.css']
+  styleUrls: ['./collbration.component.scss']
 })
 export class CollbrationComponent implements OnInit {
   responsiveOptions: Object[];
   collbrations: string[];
   constructor(private colService: CollbrationsService) {
-    
    }
 
   ngOnInit() {

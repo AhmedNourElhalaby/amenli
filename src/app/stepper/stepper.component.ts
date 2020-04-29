@@ -9,14 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 export class StepperComponent implements OnInit {
   activeIndex: number = 1;
   items ;
-  status=false;
+  status = false;
   val: string;
-  constructor(private route: ActivatedRoute) { 
-    
+
+  constructor(private route: ActivatedRoute) {
   }
 
-  get lang() {return localStorage.getItem('lang');}
-  
+  get lang() {return localStorage.getItem('lang'); }
+
   ngOnInit() {
     this.items = [
       {
@@ -41,22 +41,22 @@ export class StepperComponent implements OnInit {
     this.route.url.forEach(segment => {
       console.log(segment);
       console.log(Object.keys(segment));
-      if(Object.keys(segment).length != 0) {
+      if (Object.keys(segment).length !== 0) {
         console.log(segment[1].path);
-      if (segment[0].path == 'companies') {
+        if (segment[0].path === 'companies') {
           this.status = true;
           this.val = 'home';
         } else {
           this.status = false;
-        
-          if(segment[0].path == 'plan') {
+
+          if (segment[0].path === 'plan') {
               this.val = 'plan';
           } else {
             this.val = 'checkout';
           }
         }
       }
-    }); 
+    });
   }
 
 

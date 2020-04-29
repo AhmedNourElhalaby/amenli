@@ -22,46 +22,51 @@ export class NavLinksComponent implements OnInit, AfterViewInit {
 
 
 
-  get lang() { return localStorage.getItem('lang') }
+  get lang() { return localStorage.getItem('lang'); }
 
   changeLang(lang) {
     this.translate.setLanguage(lang);
     localStorage.setItem('lang', lang);
     window.location.reload();
-    if(lang == 'ar'){
-     
+    if (lang === 'ar') {
+
       this.translate.setDir('rtl');
-    }
-    else {
+    } else {
       this.translate.setDir('ltr');
     }
 
-   
+
   }
 
   ngAfterViewInit() {
     console.log('time');
   //  console.log('url', location.pathname);
-    if(location.pathname === '/get_quote') {
-      var ele = document.getElementById('claims');
+    if (location.pathname === '/get_quote') {
+      const ele = document.getElementById('claims');
       ele.classList.add("active-link");
     }
   }
-  
+
 
 
   onNavigate() {
     this.router.navigate(['/get_quote'])
     .then(() => {
       window.location.reload();
-      
+
     });
 
-    
+
+  }
+
+  goTo(location) {
+    window.location.hash = '';
+    window.location.hash = location;
   }
 
   scroll(el: HTMLLIElement) {
     el.scrollIntoView();
   }
+
 
 }

@@ -7,18 +7,31 @@
         <label class="label-input">{{ 'quotes.gender' | translate }}</label>
         <p-dropdown [options]="gender" class="input-field" name="gender" formControlName="gender"></p-dropdown>
     </div>
-    <div class="form-control">
-        <label class="label-input">{{ 'quotes.type_work' | translate }}</label>
-        <p-dropdown [options]="works" class="input-field" name="work" formControlName="work"></p-dropdown>
+    <div class="form-control" *ngIf="val1 == 'yes'">
+        <label class="label-input">{{ 'quotes.phone' | translate }}</label>
+        <input type="text" id="phone" pInputText class="input-field" name="phone" formControlName="phone" class="input-field" name="phone" placeholder="ادخل رقم الموبايل">
+        <p-message severity="error" text="يجب ادخال ارقام فقط" *ngIf="Phone.errors?.pattern"></p-message>
     </div>
-    
 
+    <!-- <div class="form-control" *ngIf="val1 == 'yes'" >
+            <label class="label-input">{{ 'quotes.phone' | translate }}</label>
+            <p-inputMask [style]="{'direction': 'ltr','background':'#eee','border-radius':'12px','height':'53px','border':'none','font-size':'20px','text-align':'center'}" formControlName="phone" class="input-field" name="phone" placeholder="(9999) 999-9999" mask="(9999) 999-9999"></p-inputMask>
+    </div> -->
     <div class="form-control">
-        <div class="radio-suffer p-grid">
+        <div class="radio-suffer p-grid" style="margin-right:7px;">
             {{ 'quotes.qts' | translate }}
-            <label> <span> {{ 'quotes.yes' | translate }} </span><p-radioButton  type="radio" name="salutation" ></p-radioButton></label>
-            <label> <span> {{ 'quotes.no' | translate }}</span><p-radioButton  type="radio" name="salutation" >  </p-radioButton></label>
+            <div *ngFor="let i of radios">
+                <label> <span> {{i.label}}</span><p-radioButton  type="radio" name="val1" value="i.value" (onClick)="onClick(i.value)" (onClick)="submitFormAuto(form.value.age,'age')"></p-radioButton></label> 
+            </div>
+            <br>
+            <span style="font-size: 13px;color: currentColor; display: inline-table;">(أمراض القلب، السرطان بأنواعه. أمراض الجهاز التنفسي المزمنة.)</span>
+
         </div>
 
     </div>
+    <button *ngIf="val1 == 'yes' && load  != true" class="btn" type="button" (click)="createTicket(form)" [disabled]=" form.value.phone === null">إرسال</button>
+    <p-progressSpinner *ngIf="load  == true"></p-progressSpinner>
+    <p-message severity="success" text="شكرا لاختيارك أمنلي سيتم التواصل معك وتقديم أفضل الاسعار فى اقرب وقت" *ngIf="this.ticket == true"></p-message>
+    <p-message severity="error" text="يجب ملء كامل البيانات" *ngIf="this.notDone == true"></p-message>
+
 </form>

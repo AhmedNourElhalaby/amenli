@@ -41,23 +41,27 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { InsuranceServicesComponent } from './insurance-services/insurance-services.component';
 import { ServicesComponent } from './home/services/services.component';
 
-//services
+// services
 import { QuotesService } from './quotes/shared/quotes.service';
 import { CompareModelService } from './compare-plans/shared/compare-model.service';
 import { CheckoutService } from './checkout/shared/checkout.service';
-import {SharedService} from './shared/shared.service';
+import { SharedService } from './shared/shared.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ChooseComponent } from './compare-plans/choose/choose.component';
 import { OdooService } from './shared/odoo.service';
 import { UIService } from './shared/ui.service';
 import { CollbrationsService } from './collbrations/collbrations.service';
-import {MessageService} from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { TranslateConfigService } from './shared/translate-config.service';
 import { InsuranceService } from './insurance-services/insurance.service';
 import { SliderComponent } from './home/slider/slider.component';
 import { TypeInsuranceComponent } from './home/type-insurance/type-insurance.component';
 import { ServiceGroupComponent } from './insurance-services/service-group/service-group.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
+import { ThankYouComponent } from './thank-you/thank-you.component';
+import { MapComponent } from './home/map/map.component';
+import { SocialMediaComponent } from './social-media/social-media.component';
+import { QuoteTitleComponent } from './quote-title/quote-title.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -96,7 +100,11 @@ import { ComplaintsComponent } from './complaints/complaints.component';
     TypeInsuranceComponent,
     ServiceGroupComponent,
     ComplaintsComponent,
-    
+    ThankYouComponent,
+    MapComponent,
+    SocialMediaComponent,
+    QuoteTitleComponent,
+
   ],
   imports: [
     BrowserModule,

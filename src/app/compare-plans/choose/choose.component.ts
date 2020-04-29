@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { QuotesService } from 'src/app/quotes/shared/quotes.service';
 import { Buffer } from 'buffer';
 import { Subscription } from 'rxjs';
@@ -31,6 +31,7 @@ export class ChooseComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     if (localStorage.getItem('medical') === 'medical') {
       this.medical = localStorage.getItem('medical');
       this.breakpoint = window.innerWidth >= 900 ? 'p-col' : 'p-col-6';
@@ -75,16 +76,6 @@ export class ChooseComponent implements OnInit, OnDestroy {
       zoom: 12
     };
 
-    // this.loadItemsSubs = this.quoteService.loadAllCompanies.subscribe(res => {
-    //   this.items = res;
-    //   console.log('item ==> ', this.items);
-    // });
-
-    // this.quoteService.getAllCompaniesData({
-    //   id: this.brandId,
-    //   price: this.price
-    // });
-    // this.quoteService.getByPlan(this.brandId, this.price, 'gold');
     this.loadItemsByFilterSubs = this.quoteService.loadAllCompaniesByFilter.subscribe(
       res => {
         this.items = res;
@@ -96,13 +87,13 @@ export class ChooseComponent implements OnInit, OnDestroy {
 
   onClick(company_name, plan, brandId, price) {
     if (localStorage.getItem('medical') === 'medical') {
-      
-      this.router.navigate(['/', 'plan', 'choose', company_name, plan, parseInt(localStorage.getItem('dob'))]).then(res=>  scrollTo(0,0));
-      
-    } else {
-      console.log(company_name, plan, brandId, price);
 
-      this.router.navigate(['/', 'plan', 'choose', company_name, plan, brandId, price]).then(res=>  scrollTo(0,0));
+      this.router.navigate(['/', 'plan', 'choose', company_name, plan, parseInt(localStorage.getItem('dob'))]).then(res =>  scrollTo(0, 0));
+
+    } else {
+      // console.log(company_name, plan, brandId, price);
+
+      this.router.navigate(['/', 'plan', 'choose', company_name, plan, brandId, price]).then(res =>  scrollTo(0, 0));
     }
   }
 
@@ -127,18 +118,6 @@ export class ChooseComponent implements OnInit, OnDestroy {
     return res;
   }
 
-  convertObjectToKeys(obj: object) {
-    console.log(obj);
-    if (obj) {
-      return Object.keys(obj);
-    }
-  }
-  convertObjectToValues(obj: object) {
-    console.log(obj);
-    if (obj) {
-      return Object.values(obj);
-    }
-  }
 
   display_image(enCode: string) {
     return btoa(enCode);
@@ -174,6 +153,7 @@ export class ChooseComponent implements OnInit, OnDestroy {
       res => {
         console.log('sort', res);
         this.items = res;
+        console.log('alllllllll', this.items);
       }
     );
     if (localStorage.getItem('medical') === 'medical') {

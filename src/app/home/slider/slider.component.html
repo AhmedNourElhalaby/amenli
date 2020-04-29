@@ -3,7 +3,7 @@
         <h1 style="margin-bottom: 0px;">{{ 'home.title1' | translate }}</h1>
         <h2 style="margin-top: 0px;">{{ 'home.title2' | translate }}</h2>
 
-        <button p-button class="btn-more">{{ 'home.read_more' | translate }}</button>
+        <a routerLink="/home/" fragment="quote"><button class="btn-more">{{ 'home.read_more' | translate }}</button></a>
     </div>
     <p-galleria [images]="images" [showFilmstrip]="false" panelWidth="100%" panelHeight="600" [showCaption]="false">
     </p-galleria>

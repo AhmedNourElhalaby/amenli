@@ -19,7 +19,8 @@ export class OrderSummaryComponent implements OnInit {
   price: string;
   planData: Subscription;
   chk_val: boolean;
-  imagePath:string;
+  imagePath: string;
+  load: boolean = false;
   constructor(private checkoutService: CheckoutService, private uiService: UIService, private params: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -32,6 +33,7 @@ export class OrderSummaryComponent implements OnInit {
       }
 
       this.planSelected = paramMap.get('plan_selected');
+      // localStorage.setItem()
       this.companyName = paramMap.get('company_name');
       this.brandId = paramMap.get('brandId');
       this.price = paramMap.get('price');
@@ -41,6 +43,10 @@ export class OrderSummaryComponent implements OnInit {
         const key = 'benefit';
         console.log('plans', Object.values(res)[0][key]);
         this.planData = res;
+        console.log(this.planData);
+        const keys = 'month_price';
+        localStorage.setItem('price', JSON.stringify(this.convertObjectToValues(this.planData)[0][keys]));
+
       });
 
       console.log('Here =>', this.planData);
@@ -57,27 +63,85 @@ export class OrderSummaryComponent implements OnInit {
   }
 
   onClick() {
+    this.load = true;
     console.log(this.checkoutService.form.value);
-
-    if (!this.form.valid) {
-        return;
-    }
-
-    this.checkoutService.submitTicket({
-      phone: this.form.value.number.toString(),
-      mail: this.form.value.email,
-      name: this.form.value.name,
-      car: parseInt(localStorage.getItem('brandId')),
-      sum_insured: parseInt(localStorage.getItem('price'))
-      }).subscribe(res => {
-        if (res) {
-
-            console.log('get ticket', res);
-            this.uiService.addSingle('success', 'Done', 'Thank You For Asking Amenli It Means A lot To US, We Will Come back Shortly');
-
+    if (this.checkoutService.form.value.cardNumber !== null ) {
+      if (localStorage.getItem('medical') === 'medical') {
+        this.checkoutService.submitTicket({
+          phone: this.checkoutService.form.value.phone_number,
+          mail: this.checkoutService.form.value.email,
+          name: this.checkoutService.form.value.name,
+          type: localStorage.getItem('medical'),
+          sum_insured: parseInt(localStorage.getItem('price'))
+          }).subscribe(res => {
+            console.log(res);
+            if (res) {
+                console.log('get ticket', res);
+                localStorage.setItem('name', this.checkoutService.form.value.name);
+                localStorage.setItem('address', this.checkoutService.form.value.re_address);
+                localStorage.setItem('planSelected', this.planSelected);
+                this.load = false;
+                this.router.navigate(['/thanks']);
+            }
+          }, error => console.log(error));
+      } else {
+        this.checkoutService.submitTicket({
+          phone: this.checkoutService.form.value.phone_number,
+          mail: this.checkoutService.form.value.email,
+          name: this.checkoutService.form.value.name,
+          car: parseInt(localStorage.getItem('brandId')),
+          sum_insured: parseInt(localStorage.getItem('price'))
+          }).subscribe(res => {
+            console.log(res);
+            if (res) {
+                console.log('get ticket', res);
+                localStorage.setItem('name', this.checkoutService.form.value.name);
+                localStorage.setItem('address', this.checkoutService.form.value.re_address);
+                localStorage.setItem('planSelected', this.planSelected);
+                this.load = false;
+                this.router.navigate(['/thanks']);
+            }
+          }, error => console.log(error));
         }
-      }, error => console.log(error));
-
+      } else {
+        if (localStorage.getItem('medical') === 'medical') {
+          this.checkoutService.submitTicket({
+            phone: this.checkoutService.cashForm.value.phone_number,
+            mail: this.checkoutService.cashForm.value.email,
+            name: this.checkoutService.cashForm.value.name,
+            type: localStorage.getItem('medical'),
+            sum_insured: parseInt(localStorage.getItem('price'))
+            }).subscribe(res => {
+              console.log(res);
+              if (res) {
+                  console.log('get ticket', res);
+                  localStorage.setItem('name', this.checkoutService.cashForm.value.name);
+                  localStorage.setItem('address', this.checkoutService.cashForm.value.re_address);
+                  localStorage.setItem('planSelected', this.planSelected);
+                  this.load = false;
+                  this.router.navigate(['/thanks']);
+              }
+            }, error => console.log(error));
+        } else {
+          this.checkoutService.submitTicket({
+            phone: this.checkoutService.cashForm.value.phone_number,
+            mail: this.checkoutService.cashForm.value.email,
+            name: this.checkoutService.cashForm.value.name,
+            car: parseInt(localStorage.getItem('brandId')),
+            sum_insured: parseInt(localStorage.getItem('price'))
+            }).subscribe(res => {
+              console.log(res);
+              if (res) {
+                  console.log('get ticket', res);
+                  localStorage.setItem('name', this.checkoutService.cashForm.value.name);
+                  localStorage.setItem('address', this.checkoutService.cashForm.value.re_address);
+                  localStorage.setItem('planSelected', this.planSelected);
+                  this.load = false;
+                  this.router.navigate(['/thanks']);
+              }
+            }, error => console.log(error));
+          }
+      }
   }
 
   convertObjectToKeys(obj: object) {

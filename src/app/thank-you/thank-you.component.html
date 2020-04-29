@@ -1,0 +1,47 @@
+<div class="container" style="padding-top:50px!important;">
+    <div class="thanks">
+        <p-card [style]="{'width': '80%','margin': '0 auto','text-align': 'center','margin-bottom':'50px'}" styleClass="card" class="card">
+            <p-header>
+                <div class="p-grid">
+                    <div class="p-col-6" >
+                            <img class="marg-img" src="assets/images/logo-amenli.png"/>
+                    </div>
+                    <div class="p-col-6">
+                            <img class="img" src="assets/images/delivey.png"/>
+                    </div>
+                </div>    
+            </p-header>
+            <div style="margin-top: -35px;">
+                <h4>اهلا {{name}}</h4>
+                <p>تم تنفيذ الطلب الخاص بكم وسوف يتم اصدار الوثيقة وارسالها اليك عبر العنوان المدخل
+                </p>
+            </div>
+            <div style="margin-top: 30px;">
+                <p-progressBar [value]="value"></p-progressBar>
+            </div>
+            <p-footer>
+                <div class="p-grid">
+                    <div class="p-col-6">
+                        <p-card [style]="{'background-color':'#f4f4f4','text-align':'start','height':'158px'}">
+                            <h4>ملخص الطلب</h4>
+                            
+                        <p>الفئة : {{planeSelected}}</p>
+                        <p>السعر : {{price | number:'1.0-0'}}</p>
+                            
+
+
+                        </p-card>
+                    </div>
+                    <div class="p-col-6">
+                        <p-card [style]="{'background-color':'#f4f4f4','text-align':'start'}">
+                            <h4>عنوان توصيل الطلب</h4>
+                            <h4>{{name}}</h4>
+                            <h6>{{address}}</h6>
+                        </p-card>
+                    </div>
+                </div>
+            </p-footer>
+        </p-card> 
+    </div>
+</div>
+

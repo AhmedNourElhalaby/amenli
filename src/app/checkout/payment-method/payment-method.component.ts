@@ -10,7 +10,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class PaymentMethodComponent implements OnInit {
   form: FormGroup;
-  formCash: FormGroup;
+  cashForm: FormGroup;
   selectValue: string;
   part1: boolean = false;
   part2: boolean = false;
@@ -19,8 +19,7 @@ export class PaymentMethodComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.checkoutService.form;
-    this.formCash = this.checkoutService.cashForm;
-    
+    this.cashForm = this.checkoutService.cashForm;
     // if(this.part1) {
     //     this.translate.get('checkout.card_number').subscribe(text => {
 
@@ -84,14 +83,14 @@ export class PaymentMethodComponent implements OnInit {
 
       //   (<HTMLInputElement>document.getElementById('phone_number')).placeholder = text;
       // });
-    
+
   }
 
   makeP2True() {
     this.part2 = true;
     this.part1 = false;
   }
-  get lang() {return localStorage.getItem('lang');}
+  get lang() {return localStorage.getItem('lang'); }
   onClicked(val) {
     console.log(val);
   }

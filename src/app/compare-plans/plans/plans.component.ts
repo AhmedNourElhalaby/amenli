@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CompareModelService } from '../shared/compare-model.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -27,6 +27,12 @@ export class PlansComponent implements OnInit, OnDestroy {
   constructor(private translate: TranslateService , private router: Router, private params: ActivatedRoute, private compareModelService: CompareModelService) { }
 
   ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0);
+  });
     this.medical = localStorage.getItem('medical');
     this.translate.get('compare').subscribe(option => {
       this.options = [
@@ -43,10 +49,11 @@ export class PlansComponent implements OnInit, OnDestroy {
 
       this.loadPlansSub = this.compareModelService.loadPlans.subscribe(res => {
         const key = 'price';
-        console.log('plans', Object.values(res)[0][key]);
+        // console.log('plans', Object.values(res)[0][key]);
         this.plans = res;
-        this.imagePath = res.image;
-      //  console.log(res.image);
+        // this.imagePath = res.image;
+        this.imagePath = 'assets/images/logo-amenli.png';
+        console.log(this.plans);
       });
 
       console.log('Here', this.plans);
@@ -120,13 +127,13 @@ export class PlansComponent implements OnInit, OnDestroy {
   onClick(company_name, plan_selected, brandId, price) {
     if (localStorage.getItem('medical') === 'medical') {
       this.router.navigate(['/', 'checkout', 'payment', company_name, plan_selected, parseInt(localStorage.getItem('dob')), this.imagePath])
-      .then(()=> {
-        window.scrollTo(0,0);
+      .then(() => {
+        window.scrollTo(0, 0);
       });
     } else {
       this.router.navigate(['/', 'checkout', 'payment', company_name, plan_selected, brandId, price, this.imagePath])
-      .then(()=> {
-        window.scrollTo(0,0);
+      .then(() => {
+        window.scrollTo(0, 0);
       });
     }
   }

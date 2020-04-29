@@ -29,7 +29,7 @@
     font-family: Circle-Light;
     color: #606060;
     font-weight: bold;
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .plans .section-show-price .num-price {
@@ -51,6 +51,7 @@
     /* margin: 40px 0px 40px 44px; */
     color: #606060;
     padding-left: 0px;
+    padding-right: 0px;
     width: 100%;
     font-family: Circle-Light;
 }
@@ -88,14 +89,23 @@
 }
 
 .active-btn {
-    background: var(--gradiant-one);
+    background: #f40d82
+    ;
 }
 
 .deactive-btn {
-    background: #8bc53f !important;
+    background: darkgrey !important;
     color: #fff !important;
 }
 
 .deactive-btn:hover {
-    background: var(--gradiant-one) !important;
+    background: #f40d82 !important;
+}
+.benefit {
+    padding-left: 17px;
+    font-size: 15px;
+    color: dimgrey;
+    float: right;
+    /* margin: 0 auto; */
+    margin-right: 22%;
 }

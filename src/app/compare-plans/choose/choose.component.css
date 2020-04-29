@@ -250,6 +250,8 @@ span.title-badge {
     font-size: 2.5rem;
     margin: 11px auto;
     font-family: Circle-Light;
+    font-weight: bolder;
+
 }
 
 .price-num-str a {
@@ -292,10 +294,10 @@ span.title-badge {
 
 .alert-yello {
     text-align: center;
-    width: 100%;
+    width: 70%;
     height: 25px;
     background: #FFF100;
-    margin: auto -32px;
+    margin: auto 50px;
 }
 
 .alert-yello span {
@@ -303,7 +305,7 @@ span.title-badge {
     font-family: Circle-Light;
     color: #606060;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 

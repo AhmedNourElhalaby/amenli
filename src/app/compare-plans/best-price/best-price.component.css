@@ -1,5 +1,5 @@
 section.best-price {
-    margin: 57px auto;
+    margin: 38px auto;
     width: 180px;
 }
 
@@ -98,7 +98,7 @@ h2.price-num {
     font-weight: 500;
     cursor: pointer;
     background: var(--gradiant-one) !important;
-    width: 184px !important;
+    width: 130px !important;
     margin-bottom: 2px;
     font-family: Circle-Light;
     transition: .5s;

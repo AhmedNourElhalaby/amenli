@@ -70,7 +70,7 @@
 
             </div>
         </div> -->
-        <div class="p-md-10 middle-section res-mobile2  ">
+        <div class="p-md-10 middle-section res-mobile2 ">
             <div class="top-head">
                 <ul class="nav-list">
                     <li class="nav-item">{{ 'compare.sort'| translate }}</li>
@@ -88,9 +88,9 @@
 
 
             <div class="show-plans">
-                <div *ngFor="let item of convertObjectToValues(items); let j = index;">
+                <div *ngFor="let item of items; let j = index;">
 
-                    <div *ngFor="let plan of convertObjectToValues(items)[j].plan; let i=index" style="margin-top: 10px;">
+                    <div *ngFor="let plan of item.plan; let i=index" style="margin-top: 10px;">
 
                         <p-card>
                             <div class="p-grid" (window:resize)="onResize($event)">
@@ -100,9 +100,7 @@
                                     [ngStyle]="{'background-image': getImage(convertObjectToValues(convertObjectToValues(items)[j])[1])}">
                                   
                                     </div> -->
-
-                                    <img *ngIf="medical === 'medical'" [src]="convertObjectToValues(items)[j].image">
-                                    <img *ngIf="medical !== 'medical'" [src]="convertObjectToValues(convertObjectToValues(convertObjectToValues(items)[j]))[2]">
+                                    <img style="width:70%;" [src]="item.image">
                                 </div>
 
 
@@ -111,19 +109,19 @@
                                     <p class="price-num-str">
 
                                         <span class="price-num">
-                                            {{ convertObjectToValues(convertObjectToValues(convertObjectToValues(items)[j].plan)[i])[0]["month_price"] | number:'1.0-0'}}</span>
+                                            {{ plan['gold']["month_price"] | number:'1.0-0'}}</span>
                                         <span class="type-month">{{ 'compare.currency_and_date'| translate }}</span>
 
                                     </p>
                                 </div>
 
                                 <div [ngClass]="[breakpoint, 'p-col-align-center' , 'custom-res-hidden']" style="display:block">
-                                    <h3 class="title-plan"> {{convertObjectToKeys(convertObjectToValues(convertObjectToValues(items)[j].plan)[i])[0]}} <i class="fas fa-star" *ngIf="convertObjectToValues(convertObjectToValues(convertObjectToValues(items)[j].plan)[i])[0]['icon'] == 'coins'"></i></h3>
+                                    <h3 class="title-plan"> GOLD <i class="fas fa-star" *ngIf="plan['gold']['icon'] == 'coins'"></i></h3>
                                 </div>
 
                                 <div [ngClass]="[breakpoint, 'p-col-align-center', 'heidden-section2']">
 
-                                    <p class="alert-yello" *ngIf="convertObjectToValues(convertObjectToValues(convertObjectToValues(items)[j].plan)[i])[0]['icon'] == 'coins'">
+                                    <p class="alert-yello" *ngIf="plan['gold']['icon']  == 'coins'">
                                         <span>{{ 'compare.alert'| translate }}</span>
                                     </p>
                                 </div>
@@ -131,21 +129,21 @@
                                 <div [ngClass]="[breakpoint, 'p-col-align-center' , 'custom-res-hidden']" style="display:block">
                                     <p class="price-num-str">
 
-                                        <span class="price-num">  {{ convertObjectToValues(convertObjectToValues(convertObjectToValues(items)[j].plan)[i])[0]["month_price"] | number:'1.0-0'}}</span>
+                                        <span class="price-num">  {{ plan['gold']["month_price"] | number:'1.0-0'}}</span>
                                         <span class="type-month">{{ 'compare.currency_and_date'| translate }}</span>
 
                                     </p>
                                 </div>
                                 <div [ngClass]="[breakpoint, 'p-col-align-center' , 'custom-res-show']" style="display: none;">
-                                    <h3 class="title-plan"> {{convertObjectToKeys(convertObjectToValues(convertObjectToValues(items)[j].plan)[i])[0]}} <i class="fas fa-star" *ngIf="convertObjectToValues(convertObjectToValues(convertObjectToValues(items)[j].plan)[i])[0]['icon'] == 'coins'"></i></h3>
+                                    <h3 class="title-plan"> GOLD <i class="fas fa-star" *ngIf="plan['gold']['icon'] == 'coins'"></i></h3>
                                 </div>
 
 
                                 <div [ngClass]="[breakpoint, 'p-col-align-center']">
                                     <div class="btn-actions ">
-                                        <button pButton type="button" *ngIf="medical === 'medical'" (click)="onClick(convertObjectToValues(convertObjectToValues(convertObjectToValues(items)[j]))[1], convertObjectToKeys(convertObjectToValues(convertObjectToValues(items)[j].plan)[i])[0], brandId, price)"
+                                        <button pButton type="button" *ngIf="medical === 'medical'" (click)="onClick(item.name, 'gold', brandId, price)"
                                             class="btn_view">{{ 'compare.view_deal'| translate }}</button>
-                                        <button pButton type="button" *ngIf="medical !== 'medical'" (click)="onClick(convertObjectToValues(convertObjectToValues(convertObjectToValues(items)[j]))[1], convertObjectToKeys(convertObjectToValues(convertObjectToValues(items)[j].plan)[i])[0], brandId, price)"
+                                        <button pButton type="button" *ngIf="medical !== 'medical'" (click)="onClick(item.name, 'gold', brandId, price)"
                                             class="btn_view">{{ 'compare.view_deal'| translate }}</button>
                                     </div>
                                 </div>
@@ -157,8 +155,8 @@
         </div>
         <div class="p-md-2 right-section heidden-section2">
             <div class="ads">
-                <img src="./assets/images/ads/imgad.gif" alt="ads" width="100%" height="600px">
-                <img src="./assets/images/ads/imgad.gif" alt="ads" width="100%" height="600px">
+                <img src="assets/images/ads/imgad.gif" alt="ads" width="100%" height="600px">
+                <img src="assets/images/ads/imgad.gif" alt="ads" width="100%" height="600px">
             </div>
         </div>
     </div>

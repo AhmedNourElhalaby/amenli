@@ -10,28 +10,29 @@ export class AppComponent implements OnInit {
   title = 'amenli';
   constructor(private trnaslateService: TranslateConfigService) {}
 
-  ngOnInit(){
-    let lang = localStorage.getItem('lang');
+  ngOnInit() {
+    const lang = localStorage.getItem('lang');
     console.log('HERE2');
-    if(!lang) {
+    if (!lang) {
       console.log('HERE');
       this.trnaslateService.setLanguage('ar');
       this.trnaslateService.setDefault('ar');
       this.trnaslateService.setDir('rtl');
       localStorage.setItem('lang', 'ar');
     } else {
-      let langStorage = localStorage.getItem('lang');
+      const langStorage = localStorage.getItem('lang');
       this.trnaslateService.setLanguage(langStorage);
       this.trnaslateService.setDefault(langStorage);
 
-      if(langStorage === 'ar')
+      if (langStorage === 'ar') {
         this.trnaslateService.setDir('rtl');
-      else if(langStorage === 'en')
+      } else if (langStorage === 'en') {
         this.trnaslateService.setDir('ltr');
-      
+ }
+
     }
 
-    
-    
+
+
   }
 }

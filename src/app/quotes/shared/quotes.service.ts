@@ -25,9 +25,28 @@ export class QuotesService {
     { label: '2018', value: 2018 },
     { label: '2017', value: 2017 },
   ];
+  private plans = [
+    { value: null, label: 'اختر الخطة' },
+    { value: 'معاش', label: 'لمعاشى' },
+    { value: 'زواج', label: 'لزواجى' },
+    { value: 'تعليم', label: 'لتعليم اولادى' },
+    { value: 'زواج ابناء', label: 'لزواج اولادى' },
+    { value: 'استثمار', label: 'لاستثمار أموالي' },
+    { value: 'وفاة أو عجز', label: 'في حالة الوفاة - العجز' },
+  ];
+  private lifeAges = [
+    { label: 'من -إلي', value: null },
+    { label: '22 - 29', value: '22 - 29' },
+    { label: '30 - 34', value: '30 - 34' },
+    { label: '35 - 39', value: '35 - 39' },
+    { label: '40 - 44', value: '40 - 44' },
+    { label: '45 - 49', value: '45 - 49' },
+    { label: '50 - 54', value: '50 - 54' },
+    { label: '55 - 60', value: '55 - 60' },
+  ];
 
   private ages = [
-
+    { label: 'من - إلي', value: null },
     { label: '0 - 17', value: 10 },
     { label: '18 - 24', value: 20 },
     { label: '25 - 29', value: 27 },
@@ -41,9 +60,14 @@ export class QuotesService {
   ];
 
   private gender = [
-      { label: 'MALE', value: 'M' },
-      { label: 'FEMALE', value: 'F' },
+      { label: 'الجنس', value: null },
+      { label: 'ذكر', value: 'M' },
+      { label: 'أنثي', value: 'F' },
   ];
+  private diseises = [
+    { label: 'نعم', value: 'yes' },
+    { label: 'لا', value: 'no' },
+];
 
   private works = [
     { label: 'Management Operations', value: 'Mangement' },
@@ -76,8 +100,12 @@ export class QuotesService {
           obj[key1] = record.id;
           obj[key2] = record.brand;
           this.brands.push(obj);
+          this.brands.sort((a, b) => (a.label > b.label) ? 1 : ((b.label > a.label) ? -1 : 0));
+
+
 
         });
+        this.brands.unshift({'label': 'نوع العربية', 'value': null});
         this.loadBrands.next([...this.brands]);
         //  return [...this.brands];
     }, error => console.log(error));
@@ -223,9 +251,18 @@ export class QuotesService {
   getAges() {
     return [...this.ages];
   }
+  getPlans() {
+    return [...this.plans];
+  }
+  getLifeAges() {
+    return [...this.lifeAges];
+  }
 
   getGender() {
     return [...this.gender];
+  }
+  getDiseises() {
+    return [...this.diseises];
   }
   getWorks() {
     return [...this.works];

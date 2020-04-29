@@ -17,13 +17,14 @@
 }
 
 .btn-more {
-    background: #D95F1E;
+    background: #FF8005;
     border: none;
     width: 140px;
     height: 36px;
     font-size: 18px;
-    color: #252525;
+    color: white;
+    vertical-align: bottom;
     border-radius: 20px;
-    height: 100%;
+    /* height: 100%; */
     font-family: Circle-Light !important;
 }

@@ -204,8 +204,8 @@ span.num-counter.span-active {
 }
 
 .effect-on-num-counter {
-    line-height: 51px;
-    padding-left: 2px;
+    line-height: 58px;
+    /* padding-left: 2px; */
     font-family: Circle-Light;
 }
 

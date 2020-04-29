@@ -19,6 +19,10 @@ import {GalleriaModule} from 'primeng/galleria';
 
 import {PanelModule} from 'primeng/panel';
 import {MessageModule} from 'primeng/message';
+import {ProgressBarModule} from 'primeng/progressbar';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import {InputMaskModule} from 'primeng/inputmask';
+
 
 @NgModule({
     imports: [
@@ -39,7 +43,10 @@ import {MessageModule} from 'primeng/message';
         CalendarModule,
         GalleriaModule,
         PanelModule,
-        MessageModule
+        MessageModule,
+        ProgressBarModule,
+        ProgressSpinnerModule,
+        InputMaskModule
 
     ],
     exports: [
@@ -60,7 +67,10 @@ import {MessageModule} from 'primeng/message';
         CalendarModule,
         GalleriaModule,
         PanelModule,
-        MessageModule
+        MessageModule,
+        ProgressBarModule,
+        ProgressSpinnerModule,
+        InputMaskModule
 
     ]
 })

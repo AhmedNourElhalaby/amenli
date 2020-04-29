@@ -29,6 +29,12 @@ ul.social-links>li {
     background: transparent;
     border-radius: 0;
     border: 2px solid;
+    text-align: center;
+
+}
+.layout-config-button {
+   
+    color: black;
 }
 
 .field-input::placeholder {

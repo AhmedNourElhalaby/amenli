@@ -68,7 +68,7 @@
 
 
 
-            <form action="" class="form-group-custom" [formGroup]="formCash">
+            <form action="" class="form-group-custom" [formGroup]="cashForm">
 
                 <div class="p-grid">
 
@@ -80,7 +80,9 @@
                     <div class="p-col-12">
                         <input type="tel" pInputText formControlName="phone_number" placeholder="رقم الهاتف" class="form-field" />
                     </div>
-
+                    <div class="p-col-12 ">
+                        <input type="email" pInputText formControlName="email" placeholder="الايميل الالكترونى" id="email" class="form-field" />
+                    </div>
                     <div class="p-col-12">
                         <input type="email" pInputText formControlName="address" placeholder="العنوان" class="form-field" />
                     </div>

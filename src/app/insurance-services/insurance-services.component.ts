@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { InsuranceService } from './insurance.service';
 import { Insurance } from './insurance.model';
 
@@ -14,18 +14,24 @@ export class InsuranceServicesComponent implements OnInit {
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private insuranceService: InsuranceService) { }
 
   ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0);
+  });
 
-    this.activatedRoute.queryParamMap.subscribe(paramMap=> {
-      if(!paramMap.has('type')) {
+    this.activatedRoute.queryParamMap.subscribe(paramMap => {
+      if (!paramMap.has('type')) {
         return this.router.navigateByUrl('/');
       }
 
       this.type = paramMap.get('type');
-     
+
       // this.result = this.insuranceService.getServiceByTag(this.type);
-      
+
     });
-    
+
   }
 
 

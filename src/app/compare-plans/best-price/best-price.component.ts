@@ -20,7 +20,8 @@ export class BestPriceComponent implements OnInit, OnDestroy {
   loadNumCompaniesSub: Subscription;
   company_name: string;
   company_selected: string;
-  imagePath = 'http://207.154.195.214/companyLogo/takaful.png';
+  imagePath = 'assets/images/logo-amenli.png';
+  medicalImagePath = 'assets/images/logo-amenli.png';
   @ViewChild("f", { static: true }) form: NgForm;
   constructor(
     private quoteService: QuotesService,
@@ -59,11 +60,12 @@ export class BestPriceComponent implements OnInit, OnDestroy {
       localStorage.setItem("dob", this.quoteService._dataList.dob);
       this.router.navigate([
         "/",
-        "plan",
-        "choose",
+        "checkout",
+        "payment",
         this.company_name,
         this.plan_selected,
-        this.quoteService._dataList.dob
+        this.quoteService._dataList.dob,
+        this.medicalImagePath
       ]);
     } else {
       console.log(form.value.price);

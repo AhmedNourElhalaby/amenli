@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -12,18 +12,19 @@ export class CheckoutComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(paramMap => { 
-      if(!paramMap.has("plan_selected")) {
+    window.scrollTo(0, 0);
+    this.route.paramMap.subscribe(paramMap => {
+      if (!paramMap.has("plan_selected")) {
         this.router.navigateByUrl("");
       }
 
       this.plan_selected = paramMap.get("plan_selected");
-      
+
     });
 
-    
+
   }
 
-  
+
 
 }

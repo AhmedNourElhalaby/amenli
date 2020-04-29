@@ -20,6 +20,9 @@
 .nav-item>a:hover {
     color: var(--third-color);
 }
+.logo-website img {
+    width: 40% !important;
+}
 
 
 /* .p-grid {

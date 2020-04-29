@@ -1,3 +1,10 @@
+<!-- <link rel="stylesheet" href="assets/flickity.min.css">
+    <script src="assets/flickity.pkgd.min.js"></script> -->
+<header class="header">
+    <!-- <app-navbar></app-navbar>
+    <app-welcome></app-welcome> -->
+    <app-nav-links></app-nav-links>
+</header>
 <div id="video-container">
     <!-- <app-video-header>
     </app-video-header> -->
@@ -5,8 +12,10 @@
 </div>
 <div style="clear: both;"></div>
 <div class="container">
-    <app-quotes></app-quotes>
-    <app-type-insurance></app-type-insurance>
+    <app-quote-title></app-quote-title>
+    <app-quotes #quote id="quotes"></app-quotes>
+    
+    <app-type-insurance ></app-type-insurance>
 </div>
 <div class="container">
 
@@ -18,5 +27,5 @@
 <div class="container">
     <!-- <app-partners></app-partners> -->
 </div>
-<app-contactus id="section1"></app-contactus>
-<app-footer></app-footer>
+<app-contactus></app-contactus>
+<app-footer #section1 id="section1"></app-footer>

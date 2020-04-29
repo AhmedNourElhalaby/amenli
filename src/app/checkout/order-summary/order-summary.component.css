@@ -12,7 +12,7 @@ section.order-summary .title-summary {
 
 .gold-tier h4 {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .gold-tier .package-offers {
@@ -65,7 +65,7 @@ span.currency {
 
 .subtotal h4 {
     font-size: 22px;
-    margin-top: 10px;
+    margin-top: 17px;
     padding: 0px;
     font-weight: normal;
     color: #888;
